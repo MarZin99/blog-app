@@ -1,5 +1,4 @@
 import { Injectable, signal } from '@angular/core';
-import { ThemeMode } from './theme.model';
 
 export const storageKey = 'theme';
 
@@ -7,11 +6,9 @@ export const storageKey = 'theme';
   providedIn: 'root',
 })
 export class ThemeService {
-  themeModelSignal = signal<ThemeMode>('dark');
+  themeSignal = signal<boolean>(true);
 
   updateThemeMode() {
-    this.themeModelSignal.update((value) =>
-      value === 'dark' ? 'light' : 'dark'
-    );
+    this.themeSignal.update((value) => (value === true ? false : true));
   }
 }

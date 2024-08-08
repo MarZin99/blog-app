@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { ThemeService } from '../../services/theme/theme.service';
 
 @Component({
   selector: 'theme-switch',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
   templateUrl: './theme-switch.component.html',
   styleUrl: './theme-switch.component.less',
 })
-export class ThemeSwitchComponent {}
+export class ThemeSwitchComponent {
+  themeService: ThemeService = inject(ThemeService);
+
+  toogleTheme() {
+    this.themeService.updateThemeMode();
+  }
+}

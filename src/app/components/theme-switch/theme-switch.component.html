@@ -1,4 +1,13 @@
 <label class="switch">
-  <input type="checkbox" />
-  <span class="slider round"></span>
+  <input
+    type="checkbox"
+    (click)="toogleTheme()"
+    [value]="themeService.themeSignal()"
+  />
+  <span
+    [className]="
+      themeService.themeSignal() == true ? 'slider right ' : 'slider '
+    "
+    >@if(themeService.themeSignal() == true){DAY} @else {NIGHT}</span
+  >
 </label>
