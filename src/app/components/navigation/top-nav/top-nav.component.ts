@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ThemeSwitchComponent } from '../../theme-switch/theme-switch.component';
+import { ThemeService } from '../../../services/theme/theme.service';
 
 @Component({
   selector: 'top-nav',
@@ -8,4 +9,6 @@ import { ThemeSwitchComponent } from '../../theme-switch/theme-switch.component'
   templateUrl: './top-nav.component.html',
   styleUrl: './top-nav.component.less',
 })
-export class TopNavComponent {}
+export class TopNavComponent {
+  themeService: ThemeService = inject(ThemeService);
+}

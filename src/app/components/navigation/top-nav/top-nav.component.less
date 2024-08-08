@@ -2,13 +2,15 @@
 @import "../../../variables.less";
 
 .container {
-  background: linear-gradient(
-    45deg,
-    @main-color 0,
-    @main-color 75%,
-    @dark-main-color 95%,
-    @dark-main-color 100%
-  );
+  background: @main-color;
+  -webkit-transition: background 0.3s ease-in;
+  -moz-transition: background 0.3s ease-in;
+  -o-transition: background 0.3s ease-in;
+  transition: background 0.3s ease-in;
+
+  &.dark {
+    background: @dark-main-color;
+  }
   height: 3rem;
   color: white;
   display: flex;
@@ -28,7 +30,31 @@
         white 55%,
         white 100%
       );
-    .shadow();
+    .over {
+      height: 100%;
+      width: 100%;
+      opacity: 0;
+      -webkit-transition: opacity 0.3s ease-in;
+      -moz-transition: opacity 0.3s ease-in;
+      -o-transition: opacity 0.3s ease-in;
+      transition: opacity 0.3s ease-in;
+
+      &.dark {
+        opacity: 1;
+        background: radial-gradient(
+            20Q,
+            rgba(255, 255, 255, 0) 70%,
+            @dark-main-color 100%
+          ),
+          linear-gradient(
+            225deg,
+            rgb(251, 255, 0) 0,
+            rgb(235, 220, 8) 45%,
+            white 55%,
+            white 100%
+          );
+      }
+    }
   }
   .name {
     display: flex;

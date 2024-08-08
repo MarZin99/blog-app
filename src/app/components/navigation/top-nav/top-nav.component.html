@@ -1,5 +1,7 @@
-<div class="container">
-  <div class="logo"></div>
+<div [className]="themeService.themeSignal() ? 'container ' : 'container dark'">
+  <div class="logo">
+    <div [className]="themeService.themeSignal() ? 'over ' : 'over dark'"></div>
+  </div>
   <div class="name">Bloggered</div>
   <div class="content"><theme-switch></theme-switch></div>
 </div>
