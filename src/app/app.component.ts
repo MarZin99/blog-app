@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { TopNavComponent } from './components/navigation/top-nav/top-nav.component';
+import { ThemeService } from './services/theme/theme.service';
 
 @Component({
   selector: 'app-root',
@@ -11,4 +12,5 @@ import { TopNavComponent } from './components/navigation/top-nav/top-nav.compone
 })
 export class AppComponent {
   title = 'blog-app';
+  themeService: ThemeService = inject(ThemeService);
 }
