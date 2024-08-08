@@ -1,1 +1,5 @@
-<top-nav></top-nav>
+<div>
+  <div class="header"><top-nav></top-nav></div>
+  <div [className]="themeService.themeSignal() ? 'body ' : 'body dark'"></div>
+  <div class="footer"></div>
+</div>

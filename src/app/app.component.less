@@ -1,0 +1,21 @@
+div {
+  height: 100%;
+  width: 100%;
+  .header {
+    height: 3rem;
+    background-color: red;
+  }
+  .body {
+    background: rgb(207, 224, 247);
+    -webkit-transition: background 0.3s ease-in;
+    -moz-transition: background 0.3s ease-in;
+    -o-transition: background 0.3s ease-in;
+    transition: background 0.3s ease-in;
+    &.dark {
+      background: rgb(38, 44, 61);
+      color: white;
+    }
+  }
+  .footer {
+  }
+}
