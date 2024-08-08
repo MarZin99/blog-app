@@ -1,7 +1,5 @@
 import { Injectable, signal } from '@angular/core';
 
-export const storageKey = 'theme';
-
 @Injectable({
   providedIn: 'root',
 })
