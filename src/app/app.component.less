@@ -1,11 +1,14 @@
 div {
   height: 100%;
-  width: 100%;
+  display: flex;
   .header {
-    height: 3rem;
+    position: absolute;
+    height: 4rem;
+    width: 100%;
     background-color: red;
   }
   .body {
+    width: 100%;
     background: rgb(207, 224, 247);
     -webkit-transition: background 0.3s ease-in;
     -moz-transition: background 0.3s ease-in;
@@ -17,5 +20,13 @@ div {
     }
   }
   .footer {
+  }
+}
+
+@media screen and (min-width: 768px) {
+  div {
+    .header {
+      height: 3rem;
+    }
   }
 }
